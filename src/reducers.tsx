@@ -2,11 +2,26 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface Information {
-  value: object
+  meeting: Array<object>
 }
 
 const initialState: Information = {
-  value: {},
+  meeting: [
+    {
+      objective: "",
+      date: "",
+      time: "",
+      callNo: "",
+      calledBy: "",
+      timekeeper: "",
+      location: null,
+      meetingType: "",
+      callCode: "",
+      facilitator: "",
+      noteTaker: "",
+      attendees: ""
+    }
+  ]
 }
 
 export const agendaInformation = createSlice({
@@ -14,7 +29,7 @@ export const agendaInformation = createSlice({
   initialState,
   reducers: {
     SET_INFORMATION: (state, action: PayloadAction<object>) => {
-      state.value = action.payload
+      state.meeting = [action.payload];
     },
   },
 })
