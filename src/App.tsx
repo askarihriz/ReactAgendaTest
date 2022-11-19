@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import AgendaObject from "./components/AgendaObject";
+import ExportButton from "./components/ExportButton";
 import Heading from "./components/Heading";
+import ImportButton from "./components/ImportButton";
 import { RootState } from "./store";
 
 function App() {
@@ -9,6 +11,10 @@ function App() {
   return (
     <div className="w-full h-auto flex flex-col justify-center items-center">
       <Heading text={" Agenda Object List "} />
+      <div className="flex my-8 justify-center items-center gap-8">
+        <ImportButton />
+        <ExportButton />
+      </div>
       {state.meeting.map((val: any, key: number) => {
         return (
           <AgendaObject
