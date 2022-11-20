@@ -28,8 +28,8 @@ export const agendaInformation = createSlice({
   name: 'Agenda Information',
   initialState,
   reducers: {
-    SET_INFORMATION: (state, action: PayloadAction<object>) => {
-      state.meeting = [action.payload];
+    SET_INFORMATION: (state, action: PayloadAction<Array<object>>) => {
+      state.meeting = action.payload;
     },
   },
 })

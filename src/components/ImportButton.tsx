@@ -1,16 +1,27 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { SET_INFORMATION } from "../reducers";
 
 const ImportButton = () => {
-  const [files, setFiles] = useState("");
+  const dispatch = useDispatch();
 
   const handleChange = (e: any) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = (e) => {
-      console.log("e.target.result", e.target?.result);
+    const reader = new FileReader();
+    reader.onload = (e) => {
       // @ts-ignore
-      setFiles(e.target.result);
+      const text = e.target.result;
+      // @ts-ignore
+      const json = JSON.parse(text);
+      // @ts-ignore
+      console.log(json.meeting[1]);
+      let array: Array<object> = [];
+      json.meeting.map((val: any, key: any) => {
+        array.push(val);
+      });
+      console.log(array);
+      dispatch(SET_INFORMATION(array));
     };
+    reader.readAsText(e.target.files[0]);
   };
 
   return (
@@ -26,7 +37,7 @@ const ImportButton = () => {
         type="file"
         id="myFile"
         name="myFile"
-        onChange={handleChange}
+        onChange={(e) => handleChange(e)}
       />
     </div>
   );

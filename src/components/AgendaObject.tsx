@@ -7,7 +7,7 @@ interface MeetingObject {
   callNo: string;
   calledBy: string;
   timekeeper: string;
-  location: null;
+  location: null | string;
   meetingType: string;
   callCode: string;
   facilitator: string;
