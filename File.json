@@ -1,0 +1,32 @@
+{
+  "meeting": [
+    {
+      "objective": "Meeting to dicuss the annual progress of the Design department.",
+      "date": "01/07/2003",
+      "time": "7:00 PM",
+      "callNo": "0333-246287631",
+      "calledBy": "Clarie",
+      "timekeeper": "Michael",
+      "location": "Room-45",
+      "meetingType": "Annual",
+      "callCode": "CS-4048",
+      "facilitator": "Mr.George",
+      "noteTaker": "Farid Duyb",
+      "attendees": "Maria, Elise, Jeniffer, Alex, John, David"
+    },
+    {
+      "objective": "Meeting to dicuss the sessional progress of the Product department.",
+      "date": "07/08/2002",
+      "time": "5:00 PM",
+      "callNo": "0333-246287631",
+      "calledBy": "Michael",
+      "timekeeper": "Clarie",
+      "location": "Room-31",
+      "meetingType": "quarterly",
+      "callCode": "CS-1218",
+      "facilitator": "Mr.George",
+      "noteTaker": "Farid Duyb",
+      "attendees": "Maroosh, Alisa, Jenny, Alexsander, Jawad, Dawood"
+    }
+  ]
+}
