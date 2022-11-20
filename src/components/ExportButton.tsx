@@ -11,7 +11,6 @@ const ExportButton = () => {
     const link = document.createElement("a");
     link.href = jsonString;
     link.download = "data.json";
-
     link.click();
   };
   return (

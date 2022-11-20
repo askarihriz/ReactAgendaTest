@@ -8,6 +8,7 @@ import { RootState } from "./store";
 
 function App() {
   const state = useSelector((state: RootState) => state.agendaInformation);
+
   return (
     <div className="w-full h-auto flex flex-col justify-center items-center">
       <Heading text={" Agenda Object List "} />
@@ -31,6 +32,7 @@ function App() {
             facilitator={val.facilitator}
             noteTaker={val.noteTaker}
             key={key}
+            index={key}
           />
         );
       })}
