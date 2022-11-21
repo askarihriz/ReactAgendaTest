@@ -3,7 +3,8 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { act } from 'react-dom/test-utils'
 
 export interface Information {
-  meeting: Array<object>
+  meeting: Array<object>;
+  createButton: Boolean;
 }
 
 const initialState: Information = {
@@ -22,7 +23,8 @@ const initialState: Information = {
       noteTaker: "Farid Duyb",
       attendees: "Maria, Elise, Jeniffer, Alex, John, David"
     }
-  ]
+  ],
+  createButton: false,
 }
 
 export const agendaInformation = createSlice({
@@ -44,9 +46,15 @@ export const agendaInformation = createSlice({
     SET_INFORMATION: (state, action: PayloadAction<Array<object>>) => {
       state.meeting = action.payload;
     },
+    SET_CREATEBUTTON: (state, action: PayloadAction<Boolean>) =>{
+      state.createButton = action.payload;
+    },
+    ADD_MEETING: (state, action: PayloadAction<object>) => {
+      state.meeting.push(action.payload);
+    }
   },
 })
 
-export const { SET_INFORMATION, DELETE_INFORMATION } = agendaInformation.actions
+export const { SET_INFORMATION, DELETE_INFORMATION, SET_CREATEBUTTON, ADD_MEETING } = agendaInformation.actions
 
 export default agendaInformation.reducer

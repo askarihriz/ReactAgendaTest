@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import AgendaObject from "./components/AgendaObject";
+import CreateAgendaObject from "./components/CreateAgendaObject";
+import { CreateButton } from "./components/CreateButton";
 import ExportButton from "./components/ExportButton";
 import Heading from "./components/Heading";
 import ImportButton from "./components/ImportButton";
@@ -14,8 +16,10 @@ function App() {
       <Heading text={" Agenda Object List "} />
       <div className="flex my-8 justify-center items-center gap-8">
         <ImportButton />
+        <CreateButton />
         <ExportButton />
       </div>
+      {state.createButton && <CreateAgendaObject />}
       {state.meeting.map((val: any, key: number) => {
         return (
           <AgendaObject
