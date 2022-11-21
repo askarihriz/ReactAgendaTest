@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import AgendaObject from "./components/AgendaObject";
 import CreateAgendaObject from "./components/CreateAgendaObject";
 import { CreateButton } from "./components/CreateButton";
+import EditAgendaObject from "./components/EditAgendaObject";
 import ExportButton from "./components/ExportButton";
 import Heading from "./components/Heading";
 import ImportButton from "./components/ImportButton";
@@ -20,6 +21,7 @@ function App() {
         <ExportButton />
       </div>
       {state.createButton && <CreateAgendaObject />}
+      {state.editButton && <EditAgendaObject />}
       {state.meeting.map((val: any, key: number) => {
         return (
           <AgendaObject

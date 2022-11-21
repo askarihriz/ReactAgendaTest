@@ -1,7 +1,11 @@
 import React from "react";
 import { Dropdown, Menu } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { DELETE_INFORMATION } from "../reducers";
+import {
+  DELETE_INFORMATION,
+  SET_EDITBUTTON,
+  SET_EDITOBJECT,
+} from "../reducers";
 import { RootState } from "../store";
 
 interface MeetingObject {
@@ -27,7 +31,15 @@ const AgendaObject = (obj: MeetingObject) => {
     <Menu>
       <Menu.Item
         onClick={() => {
-          dispatch(DELETE_INFORMATION(obj.objective));
+          dispatch(SET_EDITBUTTON(true));
+          dispatch(SET_EDITOBJECT(obj));
+        }}
+      >
+        Edit
+      </Menu.Item>
+      <Menu.Item
+        onClick={() => {
+          dispatch(DELETE_INFORMATION(obj));
         }}
       >
         Delete
